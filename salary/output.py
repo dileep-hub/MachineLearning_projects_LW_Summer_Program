@@ -1,8 +1,12 @@
 import pandas as pd
-from sklearn.linear_model import LinearRegression 
+from sklearn.linear_model import LinearRegression
 import numpy
+import os
 
- 
+os.system("tput setaf 3")
+print("\t  \t \t welcome to ML Salary Predictor App")
+print()
+
 db = pd.read_csv('salary.csv')
 y = db['Salary']
 x = db['YearsExperience']
@@ -11,10 +15,14 @@ from sklearn.linear_model import LinearRegression
 model = LinearRegression()
 model.fit(x,y)
 
-z = input("enter years of experience: ")
+os.system("tput setaf 2")
+z = int(input("enter years of experience: "))
 out = model.predict([[ z ]])
 
-print(out)
+os.system("tput setaf 6")
+print("The estimated Salary is >>>",out)
+
+os.system("tput setaf 7")
 
 
 
