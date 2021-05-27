@@ -16,7 +16,7 @@ model = LinearRegression()
 model.fit(x,y)
 
 os.system("tput setaf 2")
-z = int(input("enter years of experience: "))
+z = float(input("enter years of experience: "))
 out = model.predict([[ z ]])
 
 os.system("tput setaf 6")
